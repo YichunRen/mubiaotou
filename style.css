@@ -1,0 +1,124 @@
+*{
+    margin-left: 2px;
+    margin-right: 2px;
+}
+
+body {font-family: 'Montserrat', sans-serif;}
+
+h1 {font-family: 'Paytone One', sans-serif;}
+
+h3 {font-family: 'Paytone One', sans-serif;}
+
+#logo-image {
+    width: 130px;
+    height: 40px;
+} 
+
+#pie-image {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+#line-image {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+figcaption {
+    text-align: center;
+}
+
+#iframe-link {
+    padding-left: 50%;
+    text-align: center;
+    display: inline-block;
+}
+
+.container p {
+    font-size: 37px;
+    color: blue;
+    text-align: center;
+}
+.container span { 
+    color: green !important;
+    text-align: center;
+    
+}
+
+.container {
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+}
+
+.container2 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex: 1;
+}
+
+.flex-item1 {flex: 1;}
+.flex-item2 {flex: 1;}
+
+
+th, td {
+    border: 0.5px solid black;
+    text-align: center;
+}
+
+table#table1 {
+    border: 1px solid black;
+    width:80%; 
+    margin-left:10%; 
+    margin-right:10%;
+}
+
+#column-name {
+    background-color: lightgray;
+}
+
+#fieldset1 {
+    border: none;
+    margin: 5px;
+}
+
+#dialog {
+    width: 24%;
+    height: 5%;
+    text-align: center;
+    padding-top: 2.5%;
+}
+
+.pure-button.button-success,
+.pure-button.button-error {
+    color: white;
+    border-radius: 4px;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+}
+
+.pure-button.button-success {
+    background: rgb(28, 184, 65); /* this is a green */
+}
+
+.pure-button.button-error {
+    background: rgb(202, 60, 60); /* this is a maroon */
+}
+
+#paymentselect {
+    width: 125px;
+    height: 100px;
+}
+
+input[type=number]{
+    width: 100px;
+} 
+
+#d3line_chart {
+    max-width: 550px;
+}
+
+#d3pie_chart {
+    max-width: 500px;
+}
+

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>DSC106-HW4-Demo</title>
+        <link rel="stylesheet" type="text/css" href="style.css"/>
+        <link href="https://fonts.googleapis.com/css?family=Montserrat%7CPaytone+One&display=swap" rel="stylesheet" />
+
+        <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.1/build/pure-min.css" 
+        integrity="sha384-oAOxQR6DkCoMliIh8yFnu25d7Eq/PHS21PClpwjOTeU2jRSq11vu66rf90/cZr47" crossorigin="anonymous">
+
+        <script src="highchart_chart.js"></script>
+        <script src="https://code.highcharts.com/highcharts.js"></script>
+    </head>
+
+    <body onload="initial_table(); delete_empty_row(); plot_line(); plot_pie();">
+        <header>
+            <h1><img src="dw-logo.png" alt="LogoImage" id="logo-image">Global Dashboard</h1>
+        </header>
+
+        <main>
+            <section class="container">
+                <div>
+                    <h3>Dingus</h3>    
+                    <p id="d-total-quantity">0</p>
+                </div>
+                <div>
+                    <h3>Widget</h3>    
+                    <p id="w-total-quantity">0</p>
+                </div>
+                <div>
+                    <h3>Sales</h3>
+                    <p id="total-sales"><span>$</span>0.00</p>
+                </div>
+            </section>
+            <hr>
+            <div class="container2">
+
+                <div class="flex-item1" id="line_chart"></div>
+                <div class="flex-item2" id="pie_chart"></div>
+            </div>
+            <hr>
+
+            <div>
+                <table id="table1">
+                    <caption>Order History</caption>
+                    <colgroup>
+                        <col id="column-name" span="1">
+                        <col span="5">
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th rowspan="2">ID#</th>
+                            <th rowspan="2">Date</th>
+                            <th colspan="2">Quantity</th>
+                            <th rowspan="2">Total</th>
+                            <th rowspan="2">Payment</th>
+                        </tr>
+                        <tr>
+                            <th>Dingus</th>
+                            <th>Widget</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr id="last-row">
+                            <td colspan = "6">&copy; 2020 D&W Worldwide.</td>
+                        </tr>      
+                    </tfoot>  
+                  </table>
+                </div><br>
+
+            <div>
+                <details onclick="start_form(); this.onclick=null;" id="form-details">
+                    <summary>Order Form</summary>
+                    <hr>
+                    <form class="pure-form" id="DW-form">
+                        <fieldset id="fieldset1">
+                            <label>Dingus</label>
+                            <input type="number" id="d-quantity" oninput="dingus_total(); check_order();" min=0>
+                            <label>@</label>
+                            <input size="20" id="dingus_price" readonly>
+                            <label>= $</label>
+                            <input size="20" id="d-total" readonly><br><br>
+
+                            <label>Widget</label>
+                            <input type="number" id="w-quantity" oninput="widget_total(); check_order();" min=0>
+                            <label>@</label>
+                            <input size="20" id="widget_price" readonly>
+                            <label>= $</label>
+                            <input size="20" id="w-total" readonly><br><br>
+
+                            <label>Total $</label>
+                            <input size="20" id="dw-total" readonly><br>
+
+                            <label>Payment</label><br>
+                            <select size="4" id="paymentselect" onchange="check_order()">
+                                <option>Visa</option>
+                                <option>MasterCard</option>
+                                <option>Paypal</option>
+                            </select><br><br>
+
+                            <button type="button" class="pure-button button-error" id="cancel-button" onclick="start_form()">Cancel</button>
+                            <button type="button" class="pure-button button-success" id="order-button" onclick="insert_row(); start_form(); plot_line(); plot_pie();">Order</button>
+                
+                        </fieldset> 
+                    </form>
+                    
+                </details>
+            </div><br><br>
+            
+        </main> 
+         
+    </body>
+
+</html>
+
