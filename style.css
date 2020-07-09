@@ -1,6 +1,8 @@
 *{
     margin-left: 3px;
     margin-right: 3px;
+    justify-content: space-around;
+    text-align: center;
 }
 
 body {font-family: 'Montserrat', sans-serif;}
@@ -10,7 +12,7 @@ h1 {font-family: 'Paytone One', sans-serif;}
 h3 {font-family: 'Paytone One', sans-serif;}
 
 hr {
-    background: linear-gradient(to right, #f8996d, #14c8b9);
+    background: linear-gradient(to right, lightblue, darkblue);
     height: 2px;
     margin-right: 5%;
     margin-left: 5%;
@@ -27,6 +29,16 @@ hr {
     display: flex;
     justify-content: space-around;
     text-align: center;
+    align-items: center;
+    margin-left: 3%;
+    margin-right: 3%;
+}
+
+.container-vertical {
+    display: flex;
+    flex-direction: column;
+    flex-flow: column wrap;
+    align-content: space-between;
 }
 
 .container p {
@@ -37,66 +49,31 @@ hr {
 }
 
 .flex-item1 {flex: 1;}
-.flex-item2 {flex: 1.8;}
-
-
-
-
-
-
-#logo-image {
-    width: 130px;
-    height: 40px;
-} 
-
-#pie-image {
-    max-width: 100%;
-    max-height: 100%;
-}
-
-#line-image {
-    max-width: 100%;
-    max-height: 100%;
-}
-
-figcaption {
-    text-align: center;
-}
-
-#iframe-link {
-    padding-left: 50%;
-    text-align: center;
-    display: inline-block;
-}
-.container span { 
-    color: green !important;
-    text-align: center;
-    
-}
-
-
-.container2 {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    flex: 1;
-}
-
+.flex-item2 {flex: 1.5;}
 
 th, td {
     border: 1px solid black;
     text-align: center;
+    height: 30px;
 }
 
 table {
+    width: 100%;
+    margin-right: 6%;
     border: 2px solid black;
-    margin-left:10%; 
     font-size: 14px;
+    border-collapse: collapse;
 }
 
 #column-name {
     background-color: lightgray;
+    font-weight: bolder;
 }
+
+
+
+
+
 
 #fieldset1 {
     border: none;
