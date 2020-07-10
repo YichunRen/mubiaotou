@@ -63,8 +63,7 @@ function plot_sum_bar() {
 	Highcharts.chart('sum_bar', {
 		chart: {
 			type: 'column',
-			height: 400,
-			width: 700
+			height: 400
 		},
 		title: {
 			text: '整体流量日趋势图'
@@ -112,8 +111,7 @@ function plot_sum_line() {
 	Highcharts.chart('sum_line', {
 		chart: {
 			height: 150,
-			type: 'line',
-			width: 700
+			type: 'line'
 		},
 		credits: {
 			enabled: false
@@ -164,8 +162,7 @@ var channel_9 = [2.85, 3.0, 3.15, 3.15, 3.0, 2.85, 2.85, 3.0, 3.15, 2.85];
 function plot_channels_line() {
 	Highcharts.chart('channel_line', {
 		chart: {
-			type: 'line',
-			width: 700
+			type: 'line'
 		},
 		credits: {
 			enabled: false
@@ -216,8 +213,7 @@ function plot_channel_bar(data) {
 	Highcharts.chart('single_channel_bar', {
 		chart: {
 			type: 'column',
-			height: 400,
-			width: 700
+			height: 400
 		},
 		title: {
 			text: '整体流量日趋势图'
@@ -265,8 +261,7 @@ function plot_channel_line(data) {
 	Highcharts.chart('single_channel_line', {
 		chart: {
 			height: 150,
-			type: 'line',
-			width: 700
+			type: 'line'
 		},
 		credits: {
 			enabled: false
@@ -375,11 +370,242 @@ function change_channel_table() {
 	}
 }
 
+var date_1_pct = [20.9, 21.3, 17.5, 20.4, 19.8];
+var date_2_pct = [18.5, 18.7, 21.5, 21.1, 20.2];
+var date_3_pct = [19.7, 21.9, 20.0, 20.1, 18.4];
+var date_4_pct = [18.2, 22.1, 20.0, 20.7, 19.0];
+var date_5_pct = [21.1, 18.3, 21.0, 18.6, 21.1];
+var date_6_pct = [19.5, 19.7, 20.3, 19.6, 20.9];
+var date_7_pct = [20.0, 19.7, 20.2, 19.5, 20.6];
+var date_8_pct = [18.7, 20.9, 19.4, 21.4, 19.5];
+var date_9_pct = [22.5, 17.9, 18.9, 21.2, 19.5];
+var date_10_pct = [22.0, 22.4, 18.7, 18.8, 18.1];
+function plot_pie(data) {
+	Highcharts.chart('uv_pie', {
+		chart: {
+			plotBackgroundColor: null,
+			plotBorderWidth: null,
+			plotShadow: false,
+			type: 'pie'
+		},
+		credits: {
+			enabled: false
+		},
+		legend: {
+			enabled: false,
+			layout: 'vertical',
+			align: 'right',
+			verticalAlign: 'middle',
+			itemMarginTop: 10,
+			itemMarginBottom: 10
+		},
+		title: {
+			text: '流量分渠道占比'
+		},
+		tooltip: {
+			pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+		},
+		accessibility: {
+			point: {
+				valueSuffix: '%'
+			}
+		},
+		plotOptions: {
+			pie: {
+				allowPointSelect: true,
+				cursor: 'pointer',
+				dataLabels: {
+					enabled: true,
+					format: '<b>{point.name}</b>: {point.percentage:.1f} %'
+				},
+				showInLegend: true
+			}
+		},
+		series: [{
+			name: '设置页UV',
+			colorByPoint: true,
+			data: [{
+				name: '渠道2',
+				y: data[0],
+				sliced: true,
+				selected: true
+			}, {
+				name: '渠道5',
+				y: data[1]
+			}, {
+				name: '渠道6',
+				y: data[2]
+			}, {
+				name: '渠道9',
+				y: data[3]
+			}, {
+				name: '渠道10',
+				y: data[4]
+			}]
+		}]
+	});
+}
 
+function change_date_table() {
+	var selection = document.getElementById("date_selection").value;
+	t1 = document.getElementById("date1");
+	t2 = document.getElementById("date2");
+	t3 = document.getElementById("date3");
+	t4 = document.getElementById("date4");
+	t5 = document.getElementById("date5");
+	t6 = document.getElementById("date6");
+	t7 = document.getElementById("date7");
+	t8 = document.getElementById("date8");
+	t9 = document.getElementById("date9");
+	t10 = document.getElementById("date10");
+	if(selection == daily_date[0]) {
+		t1.style.display = null;
+		t2.style.display = 'none';
+		t3.style.display = 'none';
+		t4.style.display = 'none';
+		t5.style.display = 'none';
+		t6.style.display = 'none';
+		t7.style.display = 'none';
+		t8.style.display = 'none';
+		t9.style.display = 'none';
+		t10.style.display = 'none';
+		plot_pie(date_1_pct);
+
+
+	} else if(selection == daily_date[1]) {
+		t1.style.display = 'none';
+		t2.style.display = null;
+		t3.style.display = 'none';
+		t4.style.display = 'none';
+		t5.style.display = 'none';
+		t6.style.display = 'none';
+		t7.style.display = 'none';
+		t8.style.display = 'none';
+		t9.style.display = 'none';
+		t10.style.display = 'none';
+
+		plot_pie(date_2_pct);
+
+	} else if(selection == daily_date[2]) {
+		t1.style.display = 'none';
+		t2.style.display = 'none';
+		t3.style.display = null;
+		t4.style.display = 'none';
+		t5.style.display = 'none';
+		t6.style.display = 'none';
+		t7.style.display = 'none';
+		t8.style.display = 'none';
+		t9.style.display = 'none';
+		t10.style.display = 'none';
+
+		plot_pie(date_3_pct);
+
+	} else if(selection == daily_date[3]) {
+		t1.style.display = 'none';
+		t2.style.display = 'none';
+		t3.style.display = 'none';
+		t4.style.display = null;
+		t5.style.display = 'none';
+		t6.style.display = 'none';
+		t7.style.display = 'none';
+		t8.style.display = 'none';
+		t9.style.display = 'none';
+		t10.style.display = 'none';
+
+		plot_pie(date_4_pct);
+
+	} else if(selection == daily_date[4]) {
+		t1.style.display = 'none';
+		t2.style.display = 'none';
+		t3.style.display = 'none';
+		t4.style.display = 'none';
+		t5.style.display = null;
+		t6.style.display = 'none';
+		t7.style.display = 'none';
+		t8.style.display = 'none';
+		t9.style.display = 'none';
+		t10.style.display = 'none';
+
+		plot_pie(date_5_pct);
+
+	} else if(selection == daily_date[5]) {
+		t1.style.display = 'none';
+		t2.style.display = 'none';
+		t3.style.display = 'none';
+		t4.style.display = 'none';
+		t5.style.display = 'none';
+		t6.style.display = null;
+		t7.style.display = 'none';
+		t8.style.display = 'none';
+		t9.style.display = 'none';
+		t10.style.display = 'none';
+
+		plot_pie(date_6_pct);
+
+	} else if(selection == daily_date[6]) {
+		t1.style.display = 'none';
+		t2.style.display = 'none';
+		t3.style.display = 'none';
+		t4.style.display = 'none';
+		t5.style.display = 'none';
+		t6.style.display = 'none';
+		t7.style.display = null;
+		t8.style.display = 'none';
+		t9.style.display = 'none';
+		t10.style.display = 'none';
+
+		plot_pie(date_7_pct);
+
+	} else if(selection == daily_date[7]) {
+		t1.style.display = 'none';
+		t2.style.display = 'none';
+		t3.style.display = 'none';
+		t4.style.display = 'none';
+		t5.style.display = 'none';
+		t6.style.display = 'none';
+		t7.style.display = 'none';
+		t8.style.display = null;
+		t9.style.display = 'none';
+		t10.style.display = 'none';
+
+		plot_pie(date_8_pct);
+
+	} else if(selection == daily_date[8]) {
+		t1.style.display = 'none';
+		t2.style.display = 'none';
+		t3.style.display = 'none';
+		t4.style.display = 'none';
+		t5.style.display = 'none';
+		t6.style.display = 'none';
+		t7.style.display = 'none';
+		t8.style.display = 'none';
+		t9.style.display = null;
+		t10.style.display = 'none';
+
+		plot_pie(date_9_pct);
+
+	} else if(selection == daily_date[9]) {
+		t1.style.display = 'none';
+		t2.style.display = 'none';
+		t3.style.display = 'none';
+		t4.style.display = 'none';
+		t5.style.display = 'none';
+		t6.style.display = 'none';
+		t7.style.display = 'none';
+		t8.style.display = 'none';
+		t9.style.display = 'none';
+		t10.style.display = null;
+
+		plot_pie(date_10_pct);
+
+	}
+}
 
 function initial_page() {
 	plot_sum_bar();
 	plot_sum_line();
 	plot_channels_line();
 	change_channel_table();
+	change_date_table();
 }
+

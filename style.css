@@ -44,8 +44,9 @@ hr {
     font-weight: bolder;
 }
 
-.flex-item1 {flex: 1;}
-.flex-item2 {flex: 1.5;}
+.flex-item1 {flex: 1 1;}
+.flex-item2 {flex: 1.5 1;}
+
 
 th, td {
     border: 1px solid black;
@@ -55,6 +56,7 @@ th, td {
 
 table {
     width: 100%;
+    min-width: 450px;
     margin-right: 6%;
     border: 2px solid black;
     font-size: 14px;
@@ -66,52 +68,32 @@ table {
     font-weight: bolder;
 }
 
-
-
-
-
-
-#fieldset1 {
-    border: none;
-    margin: 5px;
+#sum_line {
+	max-width: 700px;
 }
 
-#dialog {
-    width: 24%;
-    height: 5%;
-    text-align: center;
-    padding-top: 2.5%;
+#sum_bar {
+	max-width: 700px;
 }
 
-.pure-button.button-success,
-.pure-button.button-error {
-    color: white;
-    border-radius: 4px;
-    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+#single_channel_line {
+	max-width: 700px;
 }
 
-.pure-button.button-success {
-    background: rgb(28, 184, 65); /* this is a green */
+#single_channel_bar {
+	max-width: 700px;
 }
 
-.pure-button.button-error {
-    background: rgb(202, 60, 60); /* this is a maroon */
+#channel_line {
+	max-width: 700px;
 }
 
-#paymentselect {
-    width: 125px;
-    height: 100px;
-}
-
-input[type=number]{
-    width: 100px;
-} 
-
-#d3line_chart {
+#uv_pie {
     max-width: 550px;
+    margin-left: 10%;
 }
 
-#d3pie_chart {
-    max-width: 500px;
-}
+
+
+
 
