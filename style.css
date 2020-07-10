@@ -18,6 +18,7 @@ hr {
     margin-left: 5%;
     border: none;
     border-radius: 3px;
+    margin-bottom: 1%;
 }
 
 #title {
@@ -34,12 +35,7 @@ hr {
     margin-right: 3%;
 }
 
-.container-vertical {
-    display: flex;
-    flex-direction: column;
-    flex-flow: column wrap;
-    align-content: space-between;
-}
+
 
 .container p {
     font-size: 30px;
